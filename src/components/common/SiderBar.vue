@@ -24,9 +24,14 @@
 		data() {
 			return {
 				items: [{
-						icon: 'el-icon-setting',
+						icon: 'el-icon-document',
 						index: 'home',
 						title: '系统概述'
+					},
+					{
+						icon: 'el-icon-bell',
+						index: 'bebetterme',
+						title: 'BeBetterMe'
 					},
 					{
 						icon: 'el-icon-setting',
@@ -34,16 +39,11 @@
 						title: '用户管理',
 						subs: [{
 							index: 'usermanage1',
-							title: '用户管理1'
+							title: '用户管理初版'
 						}, {
 							index: 'usermanage2',
-							title: '用户管理2'
+							title: '用户管理综合'
 						}]
-					},
-					{
-						icon: 'el-icon-setting',
-						index: 'bebetterme',
-						title: 'BeBetterMe'
 					},
 					{
 						icon: 'el-icon-menu',

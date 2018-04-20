@@ -17,22 +17,24 @@
 				<h2>技术栈</h2>
 				<p>vue.js、vue-cli、vue-router、vue-axios、vue-vuex、element-ui</p>
 
-				<h2>功能</h2>
+				<h2>基本功能</h2>
+				<el-checkbox disabled checked>用户信息注册、用户信息删除、用户信息修改、用户信息查询</el-checkbox>
+				<br>
 				<el-checkbox disabled checked>用户的登录/注销</el-checkbox>
 				<br>
 				<el-checkbox disabled checked>权限系统控制</el-checkbox>
 				<br>
-				<el-checkbox disabled checked>BeBetterMe日常记录</el-checkbox>
+				<el-checkbox disabled checked>BeBetterMe日常总结记录</el-checkbox>
 				<br>
 				<el-checkbox disabled checked>BeBetterMe分值设置</el-checkbox>
 				<br>
 				<h2>成就系统</h2>
-				<p>获得相应的点数（2500）即可兑换一台NS</p>
-				<el-progress :text-inside="true" :stroke-width="24" :percentage="10" >3000成就点数</el-progress>
+				<p>获得相应的点数（2000）即可兑换一台全新NS</p>
+				<el-progress :text-inside="true" :stroke-width="24" :percentage="30" >3000成就点数</el-progress>
 				<!--<el-progress type="circle" :percentage="25" width="252">3000成就点数</el-progress>-->
 
 
-				<h2>以下用来测试页面上下滚动效果</h2>
+				<h2>以下信息用来测试页面上下滚动效果</h2>
 				<el-checkbox disabled checked>搜索报文删除</el-checkbox>
 				<br>
 				<el-checkbox disabled checked>从log日志获取报文</el-checkbox>
