@@ -55,8 +55,14 @@ export default new VueRouter({
 				},
 				//配置测试页面地址
 				{
-					path: '/test1',
-					component: resolve => require(['../components/contentpages/test/Test1.vue'], resolve)
+					path: '/tabletest',
+					component: resolve => require(['../components/contentpages/test/TableTest.vue'], resolve)
+				}
+				,
+				//配置测试页面地址
+				{
+					path: '/icontest',
+					component: resolve => require(['../components/contentpages/test/IconTest.vue'], resolve)
 				}
 			]
 		}

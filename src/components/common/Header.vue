@@ -1,8 +1,8 @@
 <template>
 	<div class="header">
 		<div class="logo">
-			<span ><img src="../../assets/img/homepagelogo.jpg" class="logoimg"/></span>
-			我要买一台NS</div>
+			<span><img src="../../assets/img/homepagelogo.jpg" class="logoimg" style="margin-top: 5px;border-radius:20px" /></span> 我要买一台NS
+		</div>
 		<div class="user-info">
 			<el-dropdown trigger="click" @command="handleCommand">
 				<span class="el-dropdown-link">
@@ -51,7 +51,7 @@
 		box-sizing: border-box;
 		width: 100%;
 		height: 70px;
-		font-size: 22px;
+		font-size: 24px;
 		line-height: 70px;
 		background: #13C7E3;
 	}
@@ -62,7 +62,7 @@
 		text-align: center;
 	}
 	
-	.logoimg{
+	.logoimg {
 		width: 60px;
 		height: 60px;
 		/*margin-bottom: 5px;*/

@@ -1,37 +1,39 @@
 <template>
-		<el-form :model="adduserForm" status-icon :rules="adduserRules" ref="adduserForm" label-width="100px" class="registeForm">
-				<el-form-item label="用户名" prop="username">
-					<el-input type="text" v-model="adduserForm.username" auto-complete="off" clearable></el-input>
-				</el-form-item>
-				<el-form-item label="邮箱地址" prop="email">
-					<el-input type="email" v-model="adduserForm.email" auto-complete="off" clearable></el-input>
-				</el-form-item>
-				<el-form-item label="密码" prop="pass">
-					<el-input type="password" v-model="adduserForm.pass" auto-complete="off" clearable></el-input>
-				</el-form-item>
-				<el-form-item label="确认密码" prop="checkPass">
-					<el-input type="password" v-model="adduserForm.checkPass" auto-complete="off" clearable></el-input>
-				</el-form-item>
-				<el-form-item label="生日" prop="birthday">
-					<div class="block">
-						<el-date-picker v-model="adduserForm.birthday" type="date" placeholder="选择日期" format="yyyy 年 MM 月 dd 日" value-format="yyyy-MM-dd">
-							</el-date-picker>
-					</div>
-				</el-form-item>
-				<el-form-item label="年龄" prop="age">
-					<el-input type="age" v-model.number="adduserForm.age" auto-complete="off" clearable></el-input>
-				</el-form-item>
-				<el-form-item label="性别" prop="gender">
-					<el-switch v-model="adduserForm.gender" active-color="#13ce66" inactive-color="#ff4949" active-text="男" inactive-text="女">
-					</el-switch>
-				</el-form-item>
-				<div class="adduserpage-btn">
-					<el-button-group>
-						<el-button type="primary" @click="submitForm('adduserForm')">提交</el-button>
-						<el-button @click="resetForm('adduserForm')">重置</el-button>
-					</el-button-group>
-				</div>
-		</el-form>
+	<el-form :model="adduserForm" status-icon :rules="adduserRules" ref="adduserForm" label-width="100px" class="registeForm">
+		<el-form-item label="用户名" prop="username">
+			<el-input type="text" v-model="adduserForm.username" auto-complete="off" clearable></el-input>
+		</el-form-item>
+		<el-form-item label="邮箱地址" prop="email">
+			<el-input type="email" v-model="adduserForm.email" auto-complete="off" clearable></el-input>
+		</el-form-item>
+		<el-form-item label="密码" prop="pass">
+			<el-input type="password" v-model="adduserForm.pass" auto-complete="off" clearable></el-input>
+		</el-form-item>
+		<el-form-item label="确认密码" prop="checkPass">
+			<el-input type="password" v-model="adduserForm.checkPass" auto-complete="off" clearable></el-input>
+		</el-form-item>
+		<el-form-item label="生日" prop="birthday">
+			<div class="block">
+				<el-date-picker v-model="adduserForm.birthday" type="date" placeholder="选择日期" format="yyyy 年 MM 月 dd 日" value-format="yyyy-MM-dd">
+				</el-date-picker>
+			</div>
+		</el-form-item>
+		<el-form-item label="年龄" prop="age">
+			<el-input type="age" v-model.number="adduserForm.age" auto-complete="off" clearable></el-input>
+		</el-form-item>
+		<el-form-item label="性别" prop="gender">
+			<el-switch v-model="adduserForm.gender" active-color="#13ce66" inactive-color="#ff4949" active-text="男" inactive-text="女">
+			</el-switch>
+		</el-form-item>
+		<div class="adduserpage-btn">
+			<el-button-group>
+				<el-button type="primary" @click="submitForm('adduserForm')">提交</el-button>
+				<el-button @click="resetForm('adduserForm')">重置</el-button>
+				<el-button type="primary" icon="iconfont icon-ziyuan5">图标显示在左边</el-button>
+				<el-button type="primary">图标显示在右边<i class="iconfont icon-ziyuan4"></i></el-button>
+			</el-button-group>
+		</div>
+	</el-form>
 </template>
 
 <script>
@@ -142,14 +144,14 @@
 				}
 			};
 		},
-			methods: {
+		methods: {
 			submitForm(formName) {
 				const self = this;
-//				this.$http.post("http://localhost:8080/tobuyns/user/saveUser",this.registerForm).then(function(res){
-//					console.log(res);
-//				}).catch(function(err){
-//					
-//				});
+				//				this.$http.post("http://localhost:8080/tobuyns/user/saveUser",this.registerForm).then(function(res){
+				//					console.log(res);
+				//				}).catch(function(err){
+				//					
+				//				});
 				console.log(this.adduserForm);
 				self.$refs[formName].validate((valid) => {
 					if(valid) {

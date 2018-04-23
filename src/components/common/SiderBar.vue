@@ -29,7 +29,7 @@
 						title: '系统概述'
 					},
 					{
-						icon: 'el-icon-bell',
+						icon: 'el-icon-news',
 						index: 'bebetterme',
 						title: 'BeBetterMe'
 					},
@@ -46,7 +46,7 @@
 						}]
 					},
 					{
-						icon: 'el-icon-menu',
+						icon: 'el-icon-date',
 						index: 'searchsource',
 						title: '搜索报文',
 						subs: [{
@@ -58,7 +58,7 @@
 						}]
 					},
 					{
-						icon: 'el-icon-menu',
+						icon: 'el-icon-edit-outline',
 						index: 'testreport',
 						title: '测试报告',
 						subs: [{
@@ -67,7 +67,7 @@
 						}]
 					},
 					{
-						icon: 'el-icon-menu',
+						icon: 'el-icon-sort',
 						index: 'apitest',
 						title: 'Api测试',
 						subs: [{
@@ -76,7 +76,7 @@
 						}]
 					},
 					{
-						icon: 'el-icon-menu',
+						icon: 'el-icon-mobile-phone',
 						index: 'apptest',
 						title: 'App测试',
 						subs: [{
@@ -100,15 +100,16 @@
 						}]
 					},
 					{
-						icon: 'el-icon-menu',
+//						icon: 'el-icon-menu',
+						icon: 'el-icon-edit',						
 						index: 'test',
 						title: 'TEST',
 						subs: [{
-							index: 'test1',
-							title: 'TEST1'
+							index: 'tabletest',
+							title: 'TableTest'
 						}, {
-							index: 'test2',
-							title: 'TEST2'
+							index: 'icontest',
+							title: 'IconTest'
 						}]
 					}
 				]

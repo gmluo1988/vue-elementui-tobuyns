@@ -81,8 +81,7 @@
 							</el-form-item>
 						</el-form>
 						<!--跑步距离得分明细Popover 弹出框设置-->
-						<el-popover ref="runningPopover" placement="top-start" title="跑步距离得分明细" width="200" trigger="hover" 
-							content="0, -2分;0公里:-2分;1公里:1分;2公里:3分;3公里:5分;4公里:8分;5公里:10分;6公里:12分;7公里:14分;8公里:16分;9公里:18分;10公里:25分;11公里:30分;12公里:35分;13公里:40分;14公里:45分;15公里:60分;16公里:70分;17公里:80分;18公里:90分;19公里:100分;20公里:150分;21公里:200分;">
+						<el-popover ref="runningPopover" placement="top-start" title="跑步距离得分明细" width="200" trigger="hover" content="0公里:-2分;1公里:1分;2公里:3分;3公里:5分;4公里:8分;5公里:10分;6公里:12分;7公里:14分;8公里:16分;9公里:18分;10公里:25分;11公里:30分;12公里:35分;13公里:40分;14公里:45分;15公里:60分;16公里:70分;17公里:80分;18公里:90分;19公里:100分;20公里:150分;21公里:200分;">
 						</el-popover>
 						<!--Keep完成得分明细Popover 弹出框设置-->
 						<el-popover ref="keepPopover" placement="top-start" title="Keep完成得分明细" width="200" trigger="hover" content="完成1组Keep(+3分);完成2组Keep(+6分);完成3组Keep(+9分);未完成(+0分)">
@@ -92,7 +91,7 @@
 						</el-popover>
 					</template>
 				</el-table-column>
-				<el-table-column prop="dataChange_LastTime" label="日期">
+				<el-table-column prop="dataChange_CreateTime" label="日期">
 				</el-table-column>
 				<el-table-column prop="score" label="得分">
 				</el-table-column>
@@ -105,39 +104,57 @@
 			</el-table>
 
 			<!--编辑界面弹出框-->
-			<el-dialog title="修改用户信息" :visible.sync="editFormVisible" :close-on-click-modal="false">
+			<el-dialog title="修改每日报告" :visible.sync="editFormVisible" :close-on-click-modal="false" center>
 				<el-form :model="editForm" label-width="80px" ref="editForm" :inline="true">
 					<el-form-item label="碳酸饮料">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-yinliao"></use>
+						</svg>
 						<el-radio-group v-model="editForm.cola" size="mini">
 							<el-radio class="radio" :label="1" border>没喝</el-radio>
 							<el-radio class="radio" :label="0" border>喝了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="油腻食物">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-jitui"></use>
+						</svg>
 						<el-radio-group v-model="editForm.fattyfood" size="mini">
 							<el-radio class="radio" :label="1" border>没吃</el-radio>
 							<el-radio class="radio" :label="0" border>吃了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="零食">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-tiantianquan"></use>
+						</svg>
 						<el-radio-group v-model="editForm.snacks" size="mini">
 							<el-radio class="radio" :label="1" border>没吃</el-radio>
 							<el-radio class="radio" :label="0" border>吃了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="脏话">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-shengbo"></use>
+						</svg>
 						<el-radio-group v-model="editForm.badword" size="mini">
 							<el-radio class="radio" :label="1" border>没说</el-radio>
 							<el-radio class="radio" :label="0" border>说了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="抱怨的话">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-yunduanshuju"></use>
+						</svg>
 						<el-radio-group v-model="editForm.complain" size="mini">
 							<el-radio class="radio" :label="1" border>没说</el-radio>
 							<el-radio class="radio" :label="0" border>说了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="熬夜">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-shuijue"></use>
+						</svg>
 						<el-radio-group v-model="editForm.stayuplate" size="mini">
 							<el-radio class="radio" :label="1" border>没熬夜</el-radio>
 							<el-radio class="radio" :label="0" border>熬夜了</el-radio>
@@ -145,18 +162,27 @@
 					</el-form-item>
 					<hr />
 					<el-form-item label="阅读">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-shuji"></use>
+						</svg>
 						<el-radio-group v-model="editForm.readbook" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="学习技能">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-jineng"></use>
+						</svg>
 						<el-radio-group v-model="editForm.learnskills" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="拓展技能">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-jineng1"></use>
+						</svg>
 						<el-radio-group v-model="editForm.developskills" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
@@ -165,32 +191,47 @@
 					<hr />
 					<!--<el-form-item label="跑步" prop="running">-->
 					<el-form-item label="跑步">
-						<el-input v-model="editForm.running" suffix-icon="el-icon-location-outline" placeholder="记得跑步哦" clearable>
-						</el-input>
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-paobu"></use>
+						</svg>
+						<el-input v-model="editForm.running"  placeholder="记得跑步哦" size="small" clearable  style="width: 100px;text-align: center;">
+						</el-input>公里
 
 					</el-form-item>
 					<!--<el-form-item label="Keep" prop="keep">-->
 					<el-form-item label="Keep">
-						<el-select v-model="editForm.keep" placeholder="记得来一组Keep">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-hot"></use>
+						</svg>
+						<el-select v-model="editForm.keep" placeholder="记得来一组Keep" size="small" style="width: 150px;">
 							<el-option v-for="item in keep0ptions" :key="item.value" :label="item.label" :value="item.value">
 							</el-option>
 						</el-select>
 					</el-form-item>
 					<hr />
 					<el-form-item label="早餐">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-sanmingzhi"></use>
+						</svg>
 						<el-radio-group v-model="editForm.breakfast" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="午餐">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-chifan"></use>
+						</svg>
 						<el-radio-group v-model="editForm.lunch" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="其他餐点">
-						<el-select v-model="editForm.otherfood" placeholder="记得做好吃的">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-shoutao"></use>
+						</svg>
+						<el-select v-model="editForm.otherfood" placeholder="记得做好吃的" size="small" style="width: 150px;">
 							<el-option v-for="item in otherfood0ptions" :key="item.value" :label="item.label" :value="item.value">
 							</el-option>
 						</el-select>
@@ -203,40 +244,58 @@
 			</el-dialog>
 
 			<!--新增界面弹出框-->
-			<el-dialog title="新增每日总结" :visible.sync="addFormVisible" :close-on-click-modal="false">
+			<el-dialog title="新增每日总结" :visible.sync="addFormVisible" :close-on-click-modal="false" center>
 				<!--<el-form :model="addForm" label-width="80px" :rules="addFormRules" ref="addForm">-->
 				<el-form :model="addForm" label-width="80px" ref="addForm" :inline="true">
 					<el-form-item label="碳酸饮料">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-yinliao"></use>
+						</svg>
 						<el-radio-group v-model="addForm.cola" size="mini">
 							<el-radio class="radio" :label="1" border>没喝</el-radio>
 							<el-radio class="radio" :label="0" border>喝了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="油腻食物">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-jitui"></use>
+						</svg>
 						<el-radio-group v-model="addForm.fattyfood" size="mini">
 							<el-radio class="radio" :label="1" border>没吃</el-radio>
 							<el-radio class="radio" :label="0" border>吃了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="零食">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-tiantianquan"></use>
+						</svg>
 						<el-radio-group v-model="addForm.snacks" size="mini">
 							<el-radio class="radio" :label="1" border>没吃</el-radio>
 							<el-radio class="radio" :label="0" border>吃了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="脏话">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-shengbo"></use>
+						</svg>
 						<el-radio-group v-model="addForm.badword" size="mini">
 							<el-radio class="radio" :label="1" border>没说</el-radio>
 							<el-radio class="radio" :label="0" border>说了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="抱怨的话">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-yunduanshuju"></use>
+						</svg>
 						<el-radio-group v-model="addForm.complain" size="mini">
 							<el-radio class="radio" :label="1" border>没说</el-radio>
 							<el-radio class="radio" :label="0" border>说了</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="熬夜">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-shuijue"></use>
+						</svg>
 						<el-radio-group v-model="addForm.stayuplate" size="mini">
 							<el-radio class="radio" :label="1" border>没熬夜</el-radio>
 							<el-radio class="radio" :label="0" border>熬夜了</el-radio>
@@ -244,18 +303,27 @@
 					</el-form-item>
 					<hr />
 					<el-form-item label="阅读">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-shuji"></use>
+						</svg>
 						<el-radio-group v-model="addForm.readbook" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="学习技能">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-jineng"></use>
+						</svg>
 						<el-radio-group v-model="addForm.learnskills" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="拓展技能">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-jineng1"></use>
+						</svg>
 						<el-radio-group v-model="addForm.developskills" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
@@ -264,32 +332,48 @@
 					<hr />
 					<!--<el-form-item label="跑步" prop="running">-->
 					<el-form-item label="跑步">
-						<el-input v-model="addForm.running" suffix-icon="el-icon-location-outline" placeholder="记得跑步哦" clearable>
-						</el-input>
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-paobu"></use>
+						</svg>
+						<el-input v-model="addForm.running" placeholder="记得跑步哦" size="small" clearable style="width: 100px;">
+						</el-input>公里
 
 					</el-form-item>
 					<!--<el-form-item label="Keep" prop="keep">-->
 					<el-form-item label="Keep">
-						<el-select v-model="addForm.keep" placeholder="记得来一组Keep">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-hot"></use>
+						</svg>
+						
+						<el-select v-model="addForm.keep" placeholder="记得来一组Keep" size="small" style="width: 100px;">
 							<el-option v-for="item in keep0ptions" :key="item.value" :label="item.label" :value="item.value">
 							</el-option>
-						</el-select>
+						</el-select>组
 					</el-form-item>
 					<hr />
 					<el-form-item label="早餐">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-sanmingzhi"></use>
+						</svg>
 						<el-radio-group v-model="addForm.breakfast" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="午餐">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-chifan"></use>
+						</svg>
 						<el-radio-group v-model="addForm.lunch" size="mini">
 							<el-radio class="radio" :label="1" border>完成</el-radio>
 							<el-radio class="radio" :label="0" border>未完成</el-radio>
 						</el-radio-group>
 					</el-form-item>
 					<el-form-item label="其他餐点">
-						<el-select v-model="addForm.otherfood" placeholder="记得做好吃的">
+						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
+							<use xlink:href="#icon-shoutao"></use>
+						</svg>
+						<el-select v-model="addForm.otherfood" placeholder="记得做好吃的" size="small" style="width: 150px;">
 							<el-option v-for="item in otherfood0ptions" :key="item.value" :label="item.label" :value="item.value">
 							</el-option>
 						</el-select>
@@ -446,9 +530,9 @@
 					case 0:
 						return "要坚持跑步(-2分)";
 						break;
-//					case 5:
-//						return "要坚持跑步哦(不得分)";
-//						break;
+						//					case 5:
+						//						return "要坚持跑步哦(不得分)";
+						//						break;
 					case 10:
 						return "10公里!厉害咯!";
 						break;
