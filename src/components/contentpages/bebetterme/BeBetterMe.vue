@@ -203,7 +203,7 @@
 						<svg class="icon" aria-hidden="true" style="margin-top: 5px;">
 							<use xlink:href="#icon-hot"></use>
 						</svg>
-						<el-select v-model="editForm.keep" placeholder="记得来一组Keep" size="small" style="width: 150px;">
+						<el-select v-model="editForm.keep" placeholder="记得来一组Keep" size="small" style="width: 180px;">
 							<el-option v-for="item in keep0ptions" :key="item.value" :label="item.label" :value="item.value">
 							</el-option>
 						</el-select>
@@ -345,7 +345,7 @@
 							<use xlink:href="#icon-hot"></use>
 						</svg>
 						
-						<el-select v-model="addForm.keep" placeholder="记得来一组Keep" size="small" style="width: 100px;">
+						<el-select v-model="addForm.keep" placeholder="记得来一组Keep" size="small" style="width: 180px;">
 							<el-option v-for="item in keep0ptions" :key="item.value" :label="item.label" :value="item.value">
 							</el-option>
 						</el-select>组
